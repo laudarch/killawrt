@@ -1,0 +1,24 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2016 killaWrt
+
+START=99
+STOP=01
+
+BIN=killawrt
+DEF_F=/etc/default/$BIN
+PID_F=/var/run/$BIN.pid
+
+[ -r $DEF_F ] && . $DEF_F
+
+SSD=start-stop-daemon
+
+start() {
+	[ -n "$DISABLED" ] && return
+	$SSD -S -b -x $BIN -- $OPTIONS
+}
+
+stop() {
+	[ -n "$DISABLED" ] && return
+	$SSD -K -p $PID_F
+}
+
