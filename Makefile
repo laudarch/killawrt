@@ -14,7 +14,7 @@ PKG_RELEASE:=3
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=http://github.com/laudarch/killaWRT.git
+PKG_SOURCE_URL:=http://github.com/laudarch/killawrt.git
 PKG_SOURCE_VERSION:=HEAD
 
 include $(INCLUDE_DIR)/package.mk
